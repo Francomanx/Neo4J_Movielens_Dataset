@@ -4,9 +4,9 @@
 
 Para poder cargar la ultima version de Neo4j, basta con utilizar el siguiente codigo en el directorio de tu preferencia, a traves del terminal
 
-'''bash
+```bash
 docker run -d --name neo4j-dev -p 7474:7474 -p 7687:7687 -v $HOME/neo4j/data:/data -e NEO4J_AUTH=none neo4j:latest
-'''
+```
 
 # Guia de Integracion de Datos MovieLens en Neo4j (Contenedor neo4j-dev)
 
