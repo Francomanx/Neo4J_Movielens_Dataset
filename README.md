@@ -8,6 +8,8 @@ Para poder cargar la ultima version de Neo4j, basta con utilizar el siguiente co
 docker run -d --name neo4j-dev -p 7474:7474 -p 7687:7687 -v $HOME/neo4j/data:/data -e NEO4J_AUTH=none neo4j:latest
 ```
 
+Una vez hecho eso, Puedes probar a acceder al browser de Neo4j mediante el siguiente link: http://localhost:7474/
+
 # Guia de Integracion de Datos MovieLens en Neo4j (Contenedor neo4j-dev)
 
 Este documento detalla los pasos tecnicos y estandarizados para integrar el conjunto de datos de MovieLens (ml-25m) alojado en este repositorio dentro de la instancia de Neo4j que opera en el contenedor Docker `neo4j-dev`.
@@ -29,3 +31,19 @@ Los archivos contenidos en la carpeta raiz son:
 | [genome-scores.csv](file:///home/xter/Desktop/tmp/testNeo4j/genome-scores.csv) | 435 MB | 14.288.400 | Matriz de relevancia entre peliculas y etiquetas de genoma (valores 0.0 a 1.0). |
 
 ---
+
+Ejecucion Automatizada via Pipeline
+
+Para ejecutar la carga estructural base de forma automatica y en orden estricto de dependencias, hemos dispuesto del script import_pipeline.sh dentro de la carpeta de scripts.
+
+Ejecute el pipeline desde la terminal (Linux/Mac/Git Bash):
+```bash
+./scripts/import_pipeline.sh
+```
+
+El script realiza:
+1. Validacion de que el contenedor `neo4j-dev` este activo.
+2. Copiado automatico de los archivos `.csv` a `/var/lib/neo4j/import/`.
+3. Creacion de restricciones e indices.
+4. Ingesta de `genome-tags.csv`, `movies.csv`, `links.csv` y `tags.csv`.
+5. Ejecucion de consultas de validacion y resumen de estado.
