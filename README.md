@@ -10,9 +10,7 @@ docker run -d --name neo4j-dev -p 7474:7474 -p 7687:7687 -v $HOME/neo4j/data:/da
 
 Una vez hecho eso, Puedes probar a acceder al browser de Neo4j mediante el siguiente link: http://localhost:7474/
 
-# Guia de Integracion de Datos MovieLens en Neo4j (Contenedor neo4j-dev)
-
-Este documento detalla los pasos tecnicos y estandarizados para integrar el conjunto de datos de MovieLens (ml-25m) alojado en este repositorio dentro de la instancia de Neo4j que opera en el contenedor Docker `neo4j-dev`.
+# Guia de Integracion de Datos MovieLens en Neo4j
 
 ---
 ## Descripcion General del Dataset
