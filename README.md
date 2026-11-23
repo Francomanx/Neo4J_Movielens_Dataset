@@ -49,3 +49,9 @@ El script realiza:
 3. Creacion de restricciones e indices.
 4. Ingesta de `genome-tags.csv`, `movies.csv`, `links.csv` y `tags.csv`.
 5. Ejecucion de consultas de validacion y resumen de estado.
+
+---
+
+## Experimentos
+
+En la carpeta de experimentos se encuentran los archivos .cypher con el código utilizado para las demostraciones prácticas. La explicacion a lo que se hace en estos experimentos puede comprenderse mejor en el informe de la Etapa 3
